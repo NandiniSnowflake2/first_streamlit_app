@@ -13,7 +13,9 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 fruits_selected = streamlit.multiselect('Pick Some Fruits', list(my_fruitlist.index), ['Avocado', 'Strawberries'])
 fruits_to_show = my_fruitlist.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
+
+streamlit.header('Fruitycive Fruit Advice')
 fruityvice_resonse = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_resonse)
+streamlit.text(fruityvice_resonse.json())
 
 
